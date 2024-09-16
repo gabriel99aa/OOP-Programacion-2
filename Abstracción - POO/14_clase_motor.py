@@ -34,6 +34,20 @@ class Motor:
     encendido = False
     marcha = 1
     rpm = 0
+    __siniestrado = False
+
+    def get_siniestrado(self):
+        return print(f"Siniestrado: {self.__siniestrado}")
+
+    def set_siniestrado(self, siniestrado):
+        self.__siniestrado = siniestrado
+        return self.get_siniestrado()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
 
     def arrancar(self):
         if self.encendido == False:
@@ -198,3 +212,7 @@ print("------------------------------------------------")
 # Vamos causar un error por subimos RPM 👇🏻
 motor_1.subir_rpm(5500)
 print("------------------------------------------------")
+
+motor_1.get_siniestrado()
+motor_1.set_siniestrado(True)
+motor_1.metodo_publico()

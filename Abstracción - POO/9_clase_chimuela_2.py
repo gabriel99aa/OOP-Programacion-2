@@ -1,6 +1,21 @@
 class Dragon:
+    __dragon_type = "Aire"
+
     def __init__(self):
         self.acc_energia = 0
+
+    def get_dragon_type(self):
+        return print(f"Tipo: {self.__dragon_type}")
+
+    def set_dragon_type(self, type):
+        self.__dragon_type = type
+        return self.get_dragon_type()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
 
     def comer(self, gramos):
         self.acc_energia = gramos * 4
@@ -57,3 +72,7 @@ Chimuela_3.comer(200)
 Chimuela_3.estaDebil()
 Chimuela_3.estaFeliz()
 Chimuela_3.cuantoQuiereVolar()
+
+Chimuela_3.get_dragon_type()
+Chimuela_3.set_dragon_type("Marino")
+Chimuela_3.metodo_publico()

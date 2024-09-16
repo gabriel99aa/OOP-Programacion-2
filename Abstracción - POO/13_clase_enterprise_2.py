@@ -2,6 +2,20 @@ class Nave_espacial:
     def __init__(self):
         self.potencia = 50
         self.coraza = 5
+        self.__galaxia = "Desconocida"
+
+    def get_galaxia(self):
+        return print(f"GALAXIA: {self.__galaxia}")
+
+    def set_galaxia(self, galaxia):
+        self.__galaxia = galaxia
+        return self.get_galaxia()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
 
     def show_potencia(self):
         print(f"La potencia es {self.potencia}")
@@ -67,3 +81,7 @@ enterprise.fortalezaOfensiva()
 print()
 enterprise.show_potencia()
 enterprise.show_coraza()
+
+enterprise.get_galaxia()
+enterprise.set_galaxia("VIA LÁCTEA")
+enterprise.metodo_publico()

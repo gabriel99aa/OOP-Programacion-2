@@ -1,7 +1,22 @@
 class Contador:
+    __range = "-100 a 1000"
+
     def __init__(self):
         self.contador = 0
         self.ultimo_comando_str = ""
+
+    def get_range(self):
+        return print(f"Rango: {self.__range}")
+
+    def set_range(self, since, until):
+        self.__range = f"{since} a {until}"
+        return self.get_range()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
 
     def reset(self):
         self.contador = 0
@@ -69,3 +84,6 @@ contador_cuatro.reset()
 contador_cuatro.ultimo_comando()
 contador_cuatro.valor_actual()
 # el resultado debe ser 0.
+contador_cuatro.get_range()
+contador_cuatro.set_range(-200, 300)
+contador_cuatro.metodo_publico()

@@ -1,9 +1,23 @@
 class Libro:
-    def __init__(self, título, autor, ejemplares=0, prestados=0):
+    def __init__(self, título, autor, ejemplares=0, prestados=0, donado=False):
         self.título = título
         self.autor = autor
         self.ejemplares = ejemplares
         self.prestados = prestados
+        self.__donado = donado
+
+    def get_donado(self):
+        return print(f"DONADO: {self.__donado}")
+
+    def set_donado(self, donado):
+        self.__donado = donado
+        return self.get_donado()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
 
     def préstamo(self):
         disponibles = self.ejemplares - self.prestados
@@ -41,3 +55,7 @@ libro_2.préstamo()
 libro_2.devolucion()
 libro_2.devolucion()
 libro_2.préstamo()
+
+libro_2.get_donado()
+libro_2.set_donado(True)
+libro_2.metodo_publico()

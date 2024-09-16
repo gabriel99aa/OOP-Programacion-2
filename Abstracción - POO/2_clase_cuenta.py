@@ -1,7 +1,21 @@
 class Cuenta:
-    def __init__(self, titular, cantidad=0):
+    def __init__(self, titular, cantidad=0, password=""):
         self.titular = titular
         self.cantidad = cantidad
+        self.__password = password
+
+    def get_password(self):
+        return print(f"Password: {self.__password}")
+
+    def set_password(self, password):
+        self.__password = password
+        return self.get_password()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
 
     def mostrar(self):
         print(
@@ -43,3 +57,7 @@ print("\n")
 cuenta_dos.ingresar(50000)
 print("\n")
 cuenta_dos.retirar(40000)
+
+cuenta_dos.set_password("314235HU86")
+cuenta_dos.metodo_publico()
+cuenta_dos.get_password()

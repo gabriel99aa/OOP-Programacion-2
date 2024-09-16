@@ -3,9 +3,24 @@ import string
 
 
 class Password:
+    __recomendation = "E!3fant3Gr1$"
+
     def __init__(self, longitud=None, password=None):
         self.longitud = longitud
         self.password = password
+
+    def get_recomendation(self):
+        return print(f"Recomendación: {self.__recomendation}")
+
+    def set_recomendation(self, recomendation):
+        self.__recomendation = recomendation
+        return self.get_recomendation()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
 
     def esFuerte(self):
         mayusculas = sum(1 for c in self.password if c.isupper())
@@ -58,3 +73,6 @@ print()
 
 password_tres = Password(longitud=11, password="A1b2C@d3e4f")
 password_tres.seguridadPassword()
+password_tres.get_recomendation()
+password_tres.set_recomendation("314235HU86")
+password_tres.metodo_publico()

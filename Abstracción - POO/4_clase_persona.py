@@ -1,11 +1,25 @@
 class Persona:
-    def __init__(self, nombre, edad, DNI, sexo, peso, altura):
+    def __init__(self, nombre, edad, DNI, sexo, peso, altura, DIAN=""):
         self.nombre = nombre
         self.edad = edad
         self.DNI = DNI
         self.sexo = sexo
         self.peso = peso
         self.altura = altura
+        self.__DIAN = DIAN
+
+    def get_DIAN(self):
+        return print(f"Declaración DIAN: {self.__DIAN}")
+
+    def set_DIAN(self, DIAN):
+        self.__DIAN = DIAN
+        return self.get_DIAN()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
 
     def calcularIMC(self):
         if self.altura > 3:
@@ -62,3 +76,7 @@ persona_uno.esMayorDeEdad()
 persona_uno.comprobarSexo("hombre")
 persona_uno.comprobarSexo("M")
 persona_uno.comprobarSexo("H")
+
+persona_uno.get_DIAN()
+persona_uno.set_DIAN("1088357367")
+persona_uno.metodo_publico()

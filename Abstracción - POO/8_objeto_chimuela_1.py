@@ -1,6 +1,21 @@
 class Dragon:
+    __dragon_type = "Aire"
+
     def __init__(self):
         self.acc_energia = 0
+
+    def get_dragon_type(self):
+        return print(f"Tipo: {self.__dragon_type}")
+
+    def set_dragon_type(self, type):
+        self.__dragon_type = type
+        return self.get_dragon_type()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
 
     def comer(self, gramos):
         self.acc_energia = gramos * 4
@@ -24,3 +39,6 @@ Chimuela.volar(10)
 Chimuela.volar(20)
 Chimuela.energia()
 # el resultado debe ser 350.
+Chimuela.get_dragon_type()
+Chimuela.set_dragon_type("Tierra")
+Chimuela.metodo_publico()

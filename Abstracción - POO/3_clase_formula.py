@@ -1,4 +1,19 @@
 class Formula:
+    __formula_favorita = "NINGUNA"
+
+    def get_formula_favorita(self):
+        return print(f"Formula favorita: {self.__formula_favorita}")
+
+    def set_formula_favorita(self, formula_favorita):
+        self.__formula_favorita = formula_favorita
+        return self.get_formula_favorita()
+
+    def __metodo_privado(self):
+        return "DENTRO DEL MÉTODO PRIVADO"
+
+    def metodo_publico(self):
+        return print(f"{self.__metodo_privado()}")
+
     def sumar(self, entero_uno, entero_dos):
         print(f"El resultado de la suma es: {entero_uno + entero_dos}")
 
@@ -65,3 +80,6 @@ operacion_modulo.operacion_modulo(100)
 
 primos = Formula()
 primos.primos(10)
+primos.get_formula_favorita()
+primos.set_formula_favorita("primos")
+primos.metodo_publico()
